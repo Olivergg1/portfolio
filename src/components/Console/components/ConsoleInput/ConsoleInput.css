@@ -1,0 +1,47 @@
+#console-input-container {
+  display: flex;
+
+  width: 100%;
+  height: 3rem;
+  background-color: var(--secondary-color);
+  border-top: 1px solid var(--accent-color);
+}
+
+#console-form {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#console-input {
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.console-input-btn {
+  height: 100%;
+  aspect-ratio: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  border: 0;
+}
+
+.console-input-btn:disabled {
+  opacity: 0.2;
+}
+
+.console-btn {
+  scale: 1.4;
+}
+
+#console-input:focus {
+  outline: none;
+}

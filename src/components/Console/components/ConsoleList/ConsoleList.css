@@ -1,0 +1,17 @@
+#console-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  height: 100%;
+  width: 100%;
+
+  overflow: auto;
+
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.console-entry {
+  display: flex;
+  gap: 0.5rem;
+}

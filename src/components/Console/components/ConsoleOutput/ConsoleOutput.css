@@ -1,0 +1,13 @@
+#console-output {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  height: 100%;
+  overflow: auto;
+
+  font-family: 'Courier New', Courier, monospace;
+
+  color: var(--text-color);
+}
