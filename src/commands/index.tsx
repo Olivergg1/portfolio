@@ -3,6 +3,7 @@ import Executable from '../classes/executable'
 import github from './github'
 import clear from './clear'
 import about from './about'
+import cv from './cv'
 
 interface Commands {
   [k: string]: Executable
@@ -14,6 +15,7 @@ const commands: Commands = {
   github,
   clear,
   about,
+  cv,
 }
 
 export default commands
