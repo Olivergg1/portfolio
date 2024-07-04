@@ -18,16 +18,16 @@ jobs:
         with:
           node-version: '20.11.0'
 
-      - name: Configure Git
-        run: |
-          git config --global user.email "oliver.gustafsson17@gmail.com"
-          git config --global user.name "Oliver Gustafsson"
-
-      - name: Install dependencies
-        run: npm install
+      - name: Clean install dependencies
+        run: npm ci
 
       - name: Build React app
         run: npm run build
+
+      - name: Configure Git
+        run: |
+          git config user.email "oliver.gustafsson17@gmail.com"
+          git config user.name "Olivergg1"
 
       - name: Run deploy script
         run: npm run deploy
