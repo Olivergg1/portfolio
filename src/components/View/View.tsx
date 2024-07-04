@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from 'react'
+import { HTMLAttributes } from 'react'
 import './View.css'
 
 interface ViewProps extends HTMLAttributes<HTMLDivElement> {}
