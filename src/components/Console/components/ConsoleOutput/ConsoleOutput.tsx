@@ -10,8 +10,7 @@ export default function ConsoleOutput() {
 
   return (
     <div id='console-output'>
-      {entries.length === 0 && <WelcomeView />}
-      {entries && <ConsoleList />}
+      {entries.length === 0 ? <WelcomeView /> : <ConsoleList />}
     </div>
   )
 }

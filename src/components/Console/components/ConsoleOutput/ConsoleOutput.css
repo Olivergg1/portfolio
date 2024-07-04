@@ -11,3 +11,21 @@
 
   color: var(--text-color);
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  cursor: pointer;
+  border-radius: 10px;
+  width: 5px;
+}
