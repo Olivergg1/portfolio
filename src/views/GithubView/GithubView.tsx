@@ -1,5 +1,4 @@
 import View from '../../components/View/View'
-import { useGithubProfile } from '../../hooks/github.hooks'
 import Profile from './components/Profile/Profile'
 import ReposList from './components/ReposList/ReposList'
 

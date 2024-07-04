@@ -1,6 +1,5 @@
-import { FaGithubSquare, FaJsSquare, FaReact } from 'react-icons/fa'
+import { FaGithubSquare, FaReact } from 'react-icons/fa'
 import View from '../../components/View/View'
-import { BsTsunami } from 'react-icons/bs'
 
 export default function AboutView() {
   return (
@@ -25,12 +24,11 @@ export default function AboutView() {
       <section>
         <ul>
           <p>
-            This portfolio was built using React <FaReact /> and TypeScript{' '}
-            <FaJsSquare />.
+            This portfolio was built using React <FaReact /> and TypeScript
           </p>
           <p>
             The CLI uses ReGex and custom hooks to break down and interpret a
-            command <BsTsunami />.
+            command.
           </p>
           <p>A command finds and executes an executable</p>
           <p>
