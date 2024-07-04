@@ -7,6 +7,8 @@ export interface GithubProfile {
   followers: number
   following: number
   created_at: string // Joined at
+  hireable: boolean | null
+  bio?: string
 }
 
 export interface GithubRepository {
