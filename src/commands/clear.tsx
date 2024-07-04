@@ -18,6 +18,6 @@ function clear(): ConsoleEntry {
   return createOutput(<Dummy />)
 }
 
-const Clear = new Executable(<p>Clears entries</p>, clear)
+const Clear = new Executable(<p>Clears console</p>, clear)
 
 export default Clear
