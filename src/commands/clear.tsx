@@ -10,7 +10,7 @@ function clear(): ConsoleEntry {
 
     useEffect(() => {
       clearEntries()
-    }, [])
+    })
 
     return <></>
   }

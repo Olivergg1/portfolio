@@ -34,6 +34,7 @@ export default function WelcomeView() {
           <Button onClick={() => execute('github -repos')}>
             View Github repos
           </Button>
+          <Button onClick={() => execute('about')}>About</Button>
           <Button onClick={() => execute('options')}>List all commands</Button>
         </ul>
       </section>

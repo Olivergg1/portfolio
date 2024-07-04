@@ -1,5 +1,5 @@
 import commands from '../commands'
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { ConsoleContext } from '../providers/ConsoleProvider'
 import { createInput, createOutput } from '../helpers/entry.helpers'
 import { Flags, Command } from '../types/console.types'
