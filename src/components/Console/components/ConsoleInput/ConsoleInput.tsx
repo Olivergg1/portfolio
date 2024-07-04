@@ -11,12 +11,7 @@ export default function ConsoleInput() {
   const [command, setCommand] = useState('')
   const execute = useExecute()
 
-  const inputRef = useRef<HTMLInputElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
-
-  useEffect(() => {
-    inputRef.current?.focus()
-  }, [])
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -44,7 +39,6 @@ export default function ConsoleInput() {
 
       <form ref={formRef} id='console-form' onSubmit={(e) => handleSubmit(e)}>
         <input
-          ref={inputRef}
           id='console-input'
           autoComplete='off'
           value={command}
