@@ -11,10 +11,10 @@ export default function WelcomeView() {
   const execute = useExecute()
 
   return (
-    <>
+    <View id='home'>
       {loading && <p>loading...</p>}
       {result && (
-        <View id='home'>
+        <>
           <section id='github-profile'>
             <img
               id='github-profile-img'
@@ -35,8 +35,8 @@ export default function WelcomeView() {
               Start browsing my portfolio
             </Button>
           </section>
-        </View>
+        </>
       )}
-    </>
+    </View>
   )
 }
