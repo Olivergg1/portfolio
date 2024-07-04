@@ -35,9 +35,8 @@ export default function ConsoleInput() {
         className='console-input-btn'
         onClick={(e) => {
           e.preventDefault()
-          console.log(123)
 
-          execute('options')
+          execute('help')
         }}
         role='none'>
         <FaTerminal className='icon console-btn' />
