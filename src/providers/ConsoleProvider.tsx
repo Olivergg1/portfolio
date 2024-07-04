@@ -20,7 +20,6 @@ export const ConsoleContext = createContext<IConsoleContext>({
 
 export default function ConsoleProvider({ children }: ConsoleProviderProps) {
   const [actual, setActual] = useState<ConsoleEntry>()
-
   const [entries, setEntries] = useState<ConsoleEntry[]>([])
 
   function pushEntry(entry: ConsoleEntry) {

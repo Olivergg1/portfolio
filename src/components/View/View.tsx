@@ -1,10 +1,12 @@
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
 import './View.css'
 
-interface ViewProps {
-  children?: ReactNode
-}
+interface ViewProps extends HTMLAttributes<HTMLDivElement> {}
 
-export default function View({ children }: ViewProps) {
-  return <article id='view'>{children}</article>
+export default function View(props: ViewProps) {
+  return (
+    <article className={`view ${props.className}`} {...props}>
+      {props.children}
+    </article>
+  )
 }
