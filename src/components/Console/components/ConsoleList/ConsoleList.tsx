@@ -23,8 +23,10 @@ export default function ConsoleList(props: ConsoleOutputProps) {
         <div className='console-entry'>
           {entry.isInput ? (
             <>
-              <p>{entry.time.toLocaleTimeString()}</p>
-              <BsChevronRight className='icon' />
+              <p className='cli-user'>
+                stranger@portfolio <span className='location'>~</span>
+              </p>
+              <BsChevronRight className='icon arrow-right' />
               <p>{entry.raw}</p>
             </>
           ) : (
