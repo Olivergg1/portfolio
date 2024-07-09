@@ -42,7 +42,7 @@ export class GithubContact extends Contact {
 export class PhoneContact extends Contact {
   constructor(phone: string, countryCode: number) {
     const actualContryCode = `+${countryCode}`
-    const displayPhoneNumber = `(${actualContryCode}) ${phone}`
+    const displayPhoneNumber = `(${actualContryCode})${phone}`
     const fullPhoneNumber = actualContryCode + phone
 
     super(FaPhoneSquare, displayPhoneNumber, `tel:${fullPhoneNumber}`)
