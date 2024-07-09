@@ -59,3 +59,34 @@ test('browse portfolio button executes command', async () => {
 
   expect(execute).toBeCalledWith('help')
 })
+
+test("should render looking for job button if user is hireable", async () => {
+  // Hireable = true or null, from github api
+  asMock(useGithubProfile).mockReturnValue({ loading: false, result: { hireable: true } })
+  
+  render(<WelcomeView />)
+  const hireableElement = await screen.findByText(/I'm looking for a job!/i)
+
+  expect(hireableElement).toBeInTheDocument()
+})
+
+test("should not render looking for job button if user is not hireable", () => {
+  // Hireable = true or null, from github api
+  asMock(useGithubProfile).mockReturnValue({ loading: false, result: { hireable: null } })
+  
+  render(<WelcomeView />)
+  const hireableElement = screen.queryByText(/I'm looking for a job!/i)
+
+  expect(hireableElement).not.toBeInTheDocument()
+})
+
+test("should render error component upon thrown error", async () => {
+  const error = new Error("some error")
+
+  asMock(useGithubProfile).mockReturnValue({ error })
+
+  render(<WelcomeView />)
+  const errorElement = await screen.findByRole("status")
+
+  expect(errorElement).toBeInTheDocument()
+})
