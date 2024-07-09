@@ -13,13 +13,13 @@ export function getEnvironment(name: EnvironmentKey): string | never
 export function getEnvironment(name: EnvironmentKey, fallback: string): string
 
 export function getEnvironment(name: EnvironmentKey, fallback?: string) {
-  if (!isEnvironmentNameValid(name)) {
+  if (!isEnvironmentNameValid(name) || !(`REACT_APP_${name}` in process.env)) {
     if (typeof fallback === 'string') return fallback
 
     throw new Error(
       'Envrionment variable does not exist, and no fallback was specified'
     )
   }
-
+  
   return process.env[`REACT_APP_${name}`]
 }

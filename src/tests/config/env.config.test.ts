@@ -57,6 +57,20 @@ describe('getEnvironment', () => {
       'Envrionment variable does not exist, and no fallback was specified'
     )
   })
-})
 
-describe('Node environment', () => {})
+  it("should return fallback if name is valid, but environment variable does not exist and fallback is specified", () => {
+    const fallback = "some-fallback"
+    const actual = getEnvironment("INVALID" as EnvironmentKey, fallback)
+
+    expect(actual).toBe(fallback)
+  })
+
+  it("should trow error if name is valid, but environment variable does not exist and no fallback is specified", () => {
+
+    delete (process.env as any).REACT_APP_GITHUB
+
+    expect(() => getEnvironment('GITHUB')).toThrowError(
+      'Envrionment variable does not exist, and no fallback was specified'
+    )
+  })
+})
