@@ -4,7 +4,7 @@ import contacts from '@/config/contact.config'
 
 export default function ContactView() {
   return (
-    <View>
+    <View data-testid='contacts-view'>
       <ContactList contacts={contacts} />
     </View>
   )

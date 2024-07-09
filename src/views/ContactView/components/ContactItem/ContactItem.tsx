@@ -8,7 +8,7 @@ interface ContactItemProps {
 
 export default function ContactItem({ contact }: ContactItemProps) {
   return (
-    <div className='contact-item'>
+    <div className='contact-item' role='listitem'>
       {contact.getIcon()}
       {contact.isLink() ? (
         <a href={contact.link}>{contact.text}</a>
