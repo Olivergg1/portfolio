@@ -4,9 +4,10 @@ import { useGithubProfile } from '@/hooks/github.hooks'
 import { ExecuteButton } from '@/components/Button/Button'
 
 import './WelcomeView.css'
+import Error from '@/components/Error/Error'
 
 export default function WelcomeView() {
-  const { loading, result } = useGithubProfile()
+  const { loading, result, error } = useGithubProfile()
 
   return (
     <View id='home' className='erik'>
@@ -34,6 +35,13 @@ export default function WelcomeView() {
             </ExecuteButton>
           </section>
         </>
+      )}
+      {error && (
+        <Error>
+          <h1>Failed to get Github profile</h1>
+          <p>This is probably due to an invalid Github name in your .env file</p>
+          <p>{error.message}</p>
+        </Error>
       )}
     </View>
   )
