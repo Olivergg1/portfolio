@@ -21,7 +21,6 @@ test('should render ContactView with correct contacts', async () => {
   render(<ContactViewMock />)
 
   const view = screen.getByTestId('contacts-view')
-
   const contacts = screen.getAllByRole('listitem')
 
   expect(view).toBeInTheDocument()
@@ -30,6 +29,7 @@ test('should render ContactView with correct contacts', async () => {
 
 test('should render error message if no contacts', () => {
   ContactViewMock = populateMock('@/views/ContactView/ContactView', {})
+
   render(<ContactViewMock />)
 
   const errorComponent = screen.getByTestId('error')
