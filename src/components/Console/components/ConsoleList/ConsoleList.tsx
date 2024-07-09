@@ -21,7 +21,7 @@ export default function ConsoleList(props: ConsoleOutputProps) {
     <div id='console-list-wrapper'>
       <ul ref={listElement} id='console-list'>
         {entries.map((entry) => (
-          <div className='console-entry'>
+          <div key={crypto.randomUUID()} className='console-entry'>
             {entry.isInput ? (
               <>
                 <p className='cli-user'>
