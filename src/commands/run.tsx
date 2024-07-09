@@ -25,7 +25,7 @@ const run = new Executable(
         Test the interpreter by running some command with args (optional) and
         flags (denoted with - or --, optional)
       </p>
-      <ul style={{ paddingLeft: '1rem', gap: '1rem' }}>
+      {/* <ul style={{ paddingLeft: '1rem', gap: '1rem' }}>
         <ul>
           <p>Example: 'run command arg1 arg2 --with flag'</p>
           <p>Output: 'command args:[arg1, arg2] flags: (with=flag)'</p>
@@ -38,7 +38,7 @@ const run = new Executable(
             Output: 'some args:[nonexistent, command] flags: ()'
           </p>
         </ul>
-      </ul>
+      </ul> */}
     </ul>
   ),
   method

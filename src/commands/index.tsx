@@ -5,15 +5,14 @@ import clear from './clear'
 import about from './about'
 import cv from './cv'
 import run from './run'
+import contact from './contact'
 
-interface Commands {
-  [k: string]: Executable
-}
+type Commands = Record<string, Executable>
 
 const commands: Commands = {
-  // show: show, NOTE: should I use this or have separate commands for each view?
   help,
   run,
+  contact,
   github,
   clear,
   about,
