@@ -7,9 +7,6 @@ const method: CommandFunction = (command: Command) => {
   return createOutput(<ContactView />)
 }
 
-const contact = new Executable(
-  <p>Displays alternatives to contacting me</p>,
-  method
-)
+const contact = new Executable(<p>Displays options to contacting me</p>, method)
 
 export default contact
