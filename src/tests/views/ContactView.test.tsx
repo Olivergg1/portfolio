@@ -1,6 +1,5 @@
 import ContactView from '@/views/ContactView/ContactView'
 import { render, screen } from '@testing-library/react'
-import { Contacts } from '@/types/contact.types'
 import { DiscordContact, EmailContact } from '@/classes/contact.classes'
 import { mockDefault } from '@/helpers/mock.helpers'
 
