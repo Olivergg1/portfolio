@@ -12,7 +12,7 @@ export default function ReposList() {
       {result && (
         <section id='github-repos'>
           {result.map((repo) => (
-            <div>
+            <div key={repo.name}>
               <h3>{repo.name}</h3>
               <p>{repo.language}</p>
               <p>Stars: {repo.stargazers_count}</p>

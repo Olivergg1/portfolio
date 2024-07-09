@@ -29,7 +29,7 @@ export default function Help() {
       <ul className='options'>
         <p>To execute a command, click one of the underscored options below</p>
         {Object.entries(cmds).map(([key, exe]) => (
-          <div>
+          <div key={key}>
             <Button href onClick={() => execute(key)}>
               '{key}'
             </Button>

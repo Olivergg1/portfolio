@@ -18,22 +18,24 @@ export default function ConsoleList(props: ConsoleOutputProps) {
   }, [entry])
 
   return (
-    <ul ref={listElement} id='console-list'>
-      {entries.map((entry) => (
-        <div className='console-entry'>
-          {entry.isInput ? (
-            <>
-              <p className='cli-user'>
-                stranger@portfolio <span className='location'>~</span>
-              </p>
-              <BsChevronRight className='icon arrow-right' />
-              <p>{entry.raw}</p>
-            </>
-          ) : (
-            <>{entry.element}</>
-          )}
-        </div>
-      ))}
-    </ul>
+    <div id='console-list-wrapper'>
+      <ul ref={listElement} id='console-list'>
+        {entries.map((entry) => (
+          <div key={crypto.randomUUID()} className='console-entry'>
+            {entry.isInput ? (
+              <>
+                <p className='cli-user'>
+                  stranger@portfolio <span className='location'>~</span>
+                </p>
+                <BsChevronRight className='icon arrow-right' />
+                <p>{entry.raw}</p>
+              </>
+            ) : (
+              <>{entry.element}</>
+            )}
+          </div>
+        ))}
+      </ul>
+    </div>
   )
 }

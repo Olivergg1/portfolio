@@ -5,7 +5,7 @@ interface ConsoleProviderProps {
   children?: ReactNode
 }
 
-interface IConsoleContext {
+export interface IConsoleContext {
   entries: ConsoleEntry[]
   entry?: ConsoleEntry
   pushEntry: (entry: ConsoleEntry) => void

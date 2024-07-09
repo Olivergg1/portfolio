@@ -26,7 +26,7 @@ export default function Profile() {
           </section>
           <section>
             <a href={result.html_url} target='_blank' rel='noreferrer'>
-              Take me there!
+              Visit profile on Github
             </a>
           </section>
           <section>

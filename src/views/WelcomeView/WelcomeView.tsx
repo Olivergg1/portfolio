@@ -1,21 +1,20 @@
-import View from '../../components/View/View'
-import { useExecute } from '../../hooks/console.hooks'
-import Button, { ExecuteButton } from '../../components/Button/Button'
+import View from '@/components/View/View'
+import { BsSearch } from 'react-icons/bs'
+import { useGithubProfile } from '@/hooks/github.hooks'
+import { ExecuteButton } from '@/components/Button/Button'
 
 import './WelcomeView.css'
-import { useGithubProfile } from '../../hooks/github.hooks'
-import { BsSearch } from 'react-icons/bs'
+import Error from '@/components/Error/Error'
 
 export default function WelcomeView() {
-  const { loading, result } = useGithubProfile()
-  const execute = useExecute()
+  const { loading, result, error } = useGithubProfile()
 
   return (
-    <View id='home'>
+    <View id='home' className='erik'>
       {loading && <p>loading...</p>}
       {result && (
         <>
-          <section id='github-profile'>
+          <section data-testid='profile' id='github-profile'>
             <img
               id='github-profile-img'
               src={result.avatar_url}
@@ -31,11 +30,18 @@ export default function WelcomeView() {
             )}
           </section>
           <section>
-            <Button onClick={() => execute('help')}>
+            <ExecuteButton e='help' data-testid='start-browse'>
               Start browsing my portfolio
-            </Button>
+            </ExecuteButton>
           </section>
         </>
+      )}
+      {error && (
+        <Error>
+          <h1>Failed to get Github profile</h1>
+          <p>This is probably due to an invalid Github name in your .env file</p>
+          <p>{error.message}</p>
+        </Error>
       )}
     </View>
   )
