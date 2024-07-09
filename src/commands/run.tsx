@@ -32,11 +32,9 @@ const run = new Executable(
         </ul>
         <ul>
           <p>
-            <pre />
             Example: 'run some nonexistent command'
           </p>
           <p>
-            <pre />
             Output: 'some args:[nonexistent, command] flags: ()'
           </p>
         </ul>
