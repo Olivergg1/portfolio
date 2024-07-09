@@ -8,18 +8,18 @@ export function useApi<F extends (...args: any[]) => Promise<any>>(
 
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<Error | null>(null)
-  const [result, setResult] = useState<CallReturnType>()
+  const [result, setResult] = useState<CallReturnType | null>(null)
 
   const fetchData = useCallback(async () => {
     try {
-      const res = await call()
+      const res = await call(args)
       setResult(() => res)
     } catch (error) {
       setError(error as Error)
     } finally {
       setLoading(false)
     }
-  }, [call])
+  }, [call, args])
 
   useEffect(() => {
     fetchData()

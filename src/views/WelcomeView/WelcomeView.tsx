@@ -1,21 +1,19 @@
-import View from '../../components/View/View'
-import { useExecute } from '../../hooks/console.hooks'
-import Button, { ExecuteButton } from '../../components/Button/Button'
+import View from '@/components/View/View'
+import { BsSearch } from 'react-icons/bs'
+import { useGithubProfile } from '@/hooks/github.hooks'
+import { ExecuteButton } from '@/components/Button/Button'
 
 import './WelcomeView.css'
-import { useGithubProfile } from '../../hooks/github.hooks'
-import { BsSearch } from 'react-icons/bs'
 
 export default function WelcomeView() {
   const { loading, result } = useGithubProfile()
-  const execute = useExecute()
 
   return (
-    <View id='home'>
+    <View id='home' className='erik'>
       {loading && <p>loading...</p>}
       {result && (
         <>
-          <section id='github-profile'>
+          <section data-testid='profile' id='github-profile'>
             <img
               id='github-profile-img'
               src={result.avatar_url}
@@ -31,9 +29,9 @@ export default function WelcomeView() {
             )}
           </section>
           <section>
-            <Button onClick={() => execute('help')}>
+            <ExecuteButton e='help' data-testid='start-browse'>
               Start browsing my portfolio
-            </Button>
+            </ExecuteButton>
           </section>
         </>
       )}

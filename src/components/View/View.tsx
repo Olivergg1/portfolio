@@ -3,9 +3,9 @@ import './View.css'
 
 interface ViewProps extends HTMLAttributes<HTMLDivElement> {}
 
-export default function View(props: ViewProps) {
+export default function View({ className, ...props }: ViewProps) {
   return (
-    <article className={`view ${props.className}`} {...props}>
+    <article className={`view ${className ?? ''}`} {...props}>
       {props.children}
     </article>
   )

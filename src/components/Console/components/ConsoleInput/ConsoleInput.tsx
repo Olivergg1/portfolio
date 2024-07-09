@@ -1,10 +1,10 @@
-import { FormEvent, useContext, useEffect, useRef, useState } from 'react'
+import { FormEvent, useContext, useRef, useState } from 'react'
 import { FaTerminal } from 'react-icons/fa'
-import { ConsoleContext } from '../../../../providers/ConsoleProvider'
+import { ConsoleContext } from '@/providers/ConsoleProvider'
+import { useExecute } from '@/hooks/console.hooks'
+import { BsEraser } from 'react-icons/bs'
 
 import './ConsoleInput.css'
-import { useExecute } from '../../../../hooks/console.hooks'
-import { BsEraser } from 'react-icons/bs'
 
 export default function ConsoleInput() {
   const { clearEntries, entries } = useContext(ConsoleContext)
@@ -16,6 +16,7 @@ export default function ConsoleInput() {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
+    // Abort if the prompted command is empty
     if (!command) return
 
     execute(command)
@@ -32,8 +33,7 @@ export default function ConsoleInput() {
           e.preventDefault()
 
           execute('help')
-        }}
-        role='none'>
+        }}>
         <FaTerminal className='icon console-btn' />
       </button>
 

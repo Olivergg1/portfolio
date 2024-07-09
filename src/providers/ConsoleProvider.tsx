@@ -5,14 +5,14 @@ interface ConsoleProviderProps {
   children?: ReactNode
 }
 
-interface IConsoleContext {
+export interface ConsoleContext {
   entries: ConsoleEntry[]
   entry?: ConsoleEntry
   pushEntry: (entry: ConsoleEntry) => void
   clearEntries: () => void
 }
 
-export const ConsoleContext = createContext<IConsoleContext>({
+export const ConsoleContext = createContext<ConsoleContext>({
   entries: [],
   pushEntry: () => null,
   clearEntries: () => {},
