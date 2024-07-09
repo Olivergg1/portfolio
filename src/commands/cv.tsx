@@ -2,14 +2,21 @@ import { useEffect } from 'react'
 import Executable from '../classes/executable'
 import { ConsoleEntry } from '../types/console.types'
 import { createOutput } from '../helpers/entry.helpers'
+import { getEnvironment } from '@/config/env.config'
 
 function method(): ConsoleEntry {
   function Dummy() {
-    useEffect(() => {
-      window.open('https://olivergg1.github.io/CV/', 'cv')
-    })
+    const CV = getEnvironment('CV')
 
-    return <></>
+    useEffect(() => {
+      window.open(CV, 'cv')
+    }, [CV])
+
+    return (
+      <p>
+        Opened CV at <a href={CV}>{CV}</a>
+      </p>
+    )
   }
 
   return createOutput(<Dummy />)
