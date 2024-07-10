@@ -54,5 +54,3 @@ export function useExecute() {
     interpret(command)
   }
 }
-
-export function useScrollIntoView() {}
