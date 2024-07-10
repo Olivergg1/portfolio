@@ -1,41 +1,21 @@
-import { useContext, useEffect, useRef } from 'react'
-import { ConsoleContext } from '../../../../providers/ConsoleProvider'
-import { BsChevronRight } from 'react-icons/bs'
-
 import './ConsoleList.css'
+import Entry from '../Entry/Entry'
+import { ConsoleEntry } from '@/types/console.types'
 
 interface ConsoleOutputProps {
-  entries?: string[]
+  entries: ConsoleEntry[]
 }
 
-export default function ConsoleList(props: ConsoleOutputProps) {
-  const { entries } = useContext(ConsoleContext)
-  const listElement = useRef<HTMLUListElement>(null)
-  const { entry } = useContext(ConsoleContext)
-
-  useEffect(() => {
-    listElement.current?.lastElementChild?.scrollIntoView()
-  }, [entry])
+export default function ConsoleList({ entries }: ConsoleOutputProps) {
+  function key(entry: ConsoleEntry) {
+    return entry.isInput.toString() + entry.time.toTimeString()
+  }
 
   return (
     <div id='console-list-wrapper'>
-      <ul ref={listElement} id='console-list'>
+      <ul id='console-list'>
         {entries.map((entry) => (
-          <div
-            key={entry.isInput.toString() + entry.time.toTimeString()}
-            className='console-entry'>
-            {entry.isInput ? (
-              <>
-                <p className='cli-user'>
-                  stranger@portfolio <span className='location'>~</span>
-                </p>
-                <BsChevronRight className='icon arrow-right' />
-                <p>{entry.raw}</p>
-              </>
-            ) : (
-              <>{entry.element}</>
-            )}
-          </div>
+          <Entry key={key(entry)} entry={entry} />
         ))}
       </ul>
     </div>
