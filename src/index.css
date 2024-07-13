@@ -9,6 +9,9 @@
   --secondary-color: #031a30;
   --accent-color: #70707088;
   --text-color: #e5dfde;
+
+  --text-size: clamp(0.9rem, 1.6vmin, 1.4rem);
+  --heading-2-size: clamp(1.5rem, 4vmin, 2rem);
 }
 
 html,
@@ -56,4 +59,11 @@ ul {
   gap: 0.5rem;
   width: max-content;
   max-width: 100%;
+}
+
+h2 {
+  font-size: var(--heading-2-size);
+}
+p {
+  font-size: var(--text-size);
 }

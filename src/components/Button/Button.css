@@ -13,6 +13,9 @@
   padding: 0;
 
   text-decoration: underline;
-  font-size: 1rem;
   font-family: 'Courier New', Courier, monospace;
+}
+
+.std-button:not(:has(.icon)) {
+  font-size: var(--text-color);
 }
