@@ -1,6 +1,6 @@
 header {
   display: flex;
-  padding: 0.5rem;
+  padding: 0.5rem 0.8rem;
   border-bottom: 1px solid var(--secondary-color);
 
   height: max-content;
@@ -16,9 +16,6 @@ header > section {
   border: 0;
   padding: 0;
   background-color: transparent;
-  padding-block: 0;
-  padding-inline: 0;
-  line-height: 0;
 }
 
 #logo {
