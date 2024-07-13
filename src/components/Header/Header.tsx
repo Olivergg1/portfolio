@@ -1,6 +1,6 @@
-import { ExecuteButton } from '../Button/Button'
 import './Header.css'
 import logo from './logo64.png'
+import { ExecuteButton } from '../Button/Button'
 
 export default function Header() {
   return (
@@ -10,7 +10,7 @@ export default function Header() {
           <img id='logo' src={logo} alt='logo' />
         </ExecuteButton>
       </section>
-      <section id='right'></section>
+      <section id='right'>{/* Add content here if needed */}</section>
     </header>
   )
 }
