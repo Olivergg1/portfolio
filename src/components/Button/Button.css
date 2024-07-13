@@ -17,5 +17,5 @@
 }
 
 .std-button:not(:has(.icon)) {
-  font-size: var(--text-color);
+  font-size: var(--text-size);
 }
