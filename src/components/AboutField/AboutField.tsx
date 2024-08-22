@@ -16,7 +16,7 @@ export default function AboutField({ field, ...rest }: AboutFieldProps) {
 
   if (type === 'exec')
     return (
-      <ExecuteButton className={styles.exec} e={optional ?? '/'}>
+      <ExecuteButton href className={styles.exec} e={optional ?? '/'}>
         {text}
       </ExecuteButton>
     )
