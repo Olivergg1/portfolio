@@ -1,22 +1,5 @@
-import { LinkButton } from '@/components/Button/Button'
+import AboutField from '@/components/AboutField/AboutField'
 import { Field, FieldType } from '@/types/about.types'
-
-interface AboutFieldProps {
-  field: Field
-}
-function AboutField({ field, ...rest }: AboutFieldProps) {
-  const type = field.type
-  const text = field.text
-  const href = field.optional ?? '/'
-
-  if (type === 'header') return <h1>{text}</h1>
-  if (type === 'subtitle') return <h2>{text}</h2>
-  if (type === 'href') return <LinkButton to={href}>{text}</LinkButton>
-
-  // type === 'p'
-  // Default to paragraph if no type is provided
-  return <p>{text}</p>
-}
 
 export default class AboutBuilder {
   public fields: Field[] = []
