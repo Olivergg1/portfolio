@@ -1,8 +1,8 @@
-.about_field {
-  white-space: pre-line;
+.header,
+.subtitle {
+  margin-top: 0.5rem;
 }
 
-.about_header,
-.about_sub {
-  margin-top: 1rem;
+.link {
+  width: max-content;
 }
