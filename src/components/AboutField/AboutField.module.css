@@ -1,0 +1,13 @@
+.field {
+  white-space: pre-line;
+}
+
+.header,
+.subtitle {
+  margin-top: 0.5rem;
+}
+
+.link,
+.exec {
+  width: max-content;
+}
