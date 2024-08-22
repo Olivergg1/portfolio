@@ -1,10 +1,24 @@
 import View from '../../components/View/View'
-import { AboutComponent } from '@/config/about.config'
+import {
+  AboutComponent,
+  AboutProject,
+  AboutRecent,
+} from '@/config/about.config'
 
-export default function AboutView() {
+interface AboutViewProps {
+  page?: string
+}
+
+export default function AboutView({ page }: AboutViewProps) {
+  const isAboutPortfolio = page === 'portfolio'
+  const isAboutRecent = page === 'recent'
+  const isAboutMe = !isAboutPortfolio && !isAboutRecent
+
   return (
     <View>
-      <AboutComponent />
+      {isAboutMe && <AboutComponent />}
+      {isAboutPortfolio && <AboutProject />}
+      {isAboutRecent && <AboutRecent />}
     </View>
   )
 }
