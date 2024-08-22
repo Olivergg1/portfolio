@@ -28,6 +28,8 @@ export default class AboutBuilder {
 
   public addLink(text: string, to: string) {
     this.addField(text, 'href', to)
+
+    return this
   }
 
   public build() {
