@@ -3,11 +3,9 @@ import resource from '@/resources/About.resource.json'
 
 export const AboutComponent = new AboutBuilder()
   .addField(resource.introduction)
-  //.addField(resource.education)
-  //.addField(resource.experience)
   .addField(resource.skills)
-  .addExec('How I built my portfolio', 'about -page portfolio')
-  .addExec('My most recent project', 'about -page recent')
+  .addExec('How I built my portfolio', 'about --page portfolio')
+  .addExec('My most recent project', 'about --page recent')
   .build()
 
 export const AboutProject = new AboutBuilder()
