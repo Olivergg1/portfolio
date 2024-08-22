@@ -1,5 +1,5 @@
 import { Field } from '@/types/about.types'
-import { LinkButton } from '../Button/Button'
+import { ExecuteButton, LinkButton } from '../Button/Button'
 import styles from './AboutField.module.css'
 
 interface AboutFieldProps {
@@ -9,17 +9,24 @@ interface AboutFieldProps {
 export default function AboutField({ field, ...rest }: AboutFieldProps) {
   const type = field.type
   const text = field.text
-  const href = field.optional ?? '/'
+  const optional = field.optional
 
   if (type === 'header') return <h2 className={styles.header}>{text}</h2>
   if (type === 'subtitle') return <h3 className={styles.subtitle}>{text}</h3>
-  if (type === 'href') {
+
+  if (type === 'exec')
     return (
-      <LinkButton className={styles.link} to={href}>
+      <ExecuteButton className={styles.exec} e={optional ?? '/'}>
+        {text}
+      </ExecuteButton>
+    )
+
+  if (type === 'href')
+    return (
+      <LinkButton className={styles.link} to={optional ?? ''}>
         {text}
       </LinkButton>
     )
-  }
 
   // type === 'p'
   // Default to paragraph if no type is provided
