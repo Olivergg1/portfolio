@@ -9,10 +9,10 @@ builder
   .addField(resource.education)
   .addField(resource.experience)
   .addField(resource.skills)
-  .addSubtitle('How was this portfolio built?')
-  .addField(resource.portfolio)
   .addSubtitle('My most recent project')
   .addField(resource.ryggar)
   .addLink('Check out my game!', 'https://olivergg1.github.io/Ryggar/')
+  .addSubtitle('How was this portfolio built?')
+  .addField(resource.portfolio)
 
 export const AboutComponent = builder.build()
