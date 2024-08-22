@@ -1,27 +1,12 @@
 import { FaGithubSquare, FaReact } from 'react-icons/fa'
 import View from '../../components/View/View'
+import { AboutComponent } from '@/config/about.config'
 
 export default function AboutView() {
   return (
     <View>
+      <AboutComponent />
       {/* <section>
-        <h3>Links</h3>
-        <ul>
-          <a
-            href='https://www.linkedin.com/in/oliver-gustafsson-708401202/'
-            target='_blank'
-            rel='noopener noreferrer'>
-            <FaLinkedin className='icon' />
-          </a>
-          <a
-            href='https://github.com/Olivergg1'
-            target='_blank'
-            rel='noopener noreferrer'>
-            <FaGithubSquare className='icon' />
-          </a>
-        </ul>
-      </section> */}
-      <section>
         <ul>
           <p>
             This portfolio was built using React <FaReact /> and TypeScript
@@ -34,15 +19,15 @@ export default function AboutView() {
           <p>
             The source code for the portfolio can be seen on{' '}
             <a
-              href='https://github.com/Olivergg1/portfolio'
-              target='_blank'
-              rel='noopener noreferrer'>
+              href="https://github.com/Olivergg1/portfolio"
+              target="_blank"
+              rel="noopener noreferrer">
               my public repository on Github{' '}
-              <FaGithubSquare className='icon' scale={3} />
+              <FaGithubSquare className="icon" scale={3} />
             </a>
           </p>
         </ul>
-      </section>
+      </section> */}
     </View>
   )
 }
