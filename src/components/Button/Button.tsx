@@ -29,3 +29,19 @@ export function ExecuteButton({ e, ...props }: ExecuteButtonProps) {
     </Button>
   )
 }
+
+interface LinkButtonProps extends ButtonProps {
+  to: string
+}
+
+export function LinkButton({ to, children, ...rest }: LinkButtonProps) {
+  function navigate() {
+    window.open(to)
+  }
+
+  return (
+    <Button {...rest} href role="link" title={to} onClick={navigate}>
+      {children}
+    </Button>
+  )
+}
