@@ -32,6 +32,12 @@ export default class AboutBuilder {
     return this
   }
 
+  public addExec(text: string, command: string) {
+    this.addField(text, 'exec', command)
+
+    return this
+  }
+
   public build() {
     const fields = this.fields
 
