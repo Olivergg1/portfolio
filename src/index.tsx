@@ -5,13 +5,16 @@ import App from '@/App'
 import reportWebVitals from '@/reportWebVitals'
 import ConsoleProvider from '@/providers/ConsoleProvider'
 import { isProduction } from './helpers/node.helpers'
+import ThemeProvider from './providers/ThemeProvider'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
-    <ConsoleProvider>
-      <App />
-    </ConsoleProvider>
+    <ThemeProvider>
+      <ConsoleProvider>
+        <App />
+      </ConsoleProvider>
+    </ThemeProvider>
   </React.StrictMode>
 )
 
