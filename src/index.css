@@ -73,13 +73,13 @@ a {
 
 @media only screen and (max-width: 575px) {
   :root {
-    font-size: 11px;
+    font-size: 16px;
   }
 }
 
 @media only screen and (min-width: 576px) {
   :root {
-    font-size: 11px;
+    font-size: 16px;
   }
 }
 
@@ -97,6 +97,6 @@ a {
 
 @media only screen and (min-width: 1200px) {
   :root {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
