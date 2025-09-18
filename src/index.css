@@ -71,6 +71,34 @@ a {
   font-size: var(--text-size);
 }
 
+/* PROJECTS */
+
+.project {
+  display: flex;
+  gap: 1rem;
+  border-left: 3px solid var(--theme-color);
+  padding: 0 0.5rem;
+  height: max-content;
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-meta .std-button.href:not(.link) {
+  margin-top: auto;
+  background-color: var(--theme-color);
+  padding: 0.5rem;
+  justify-content: center;
+}
+
+.thumbnail {
+  max-height: 100%;
+  border: 1px solid var(--border-color);
+}
+
 @media only screen and (max-width: 575px) {
   :root {
     font-size: 11px;

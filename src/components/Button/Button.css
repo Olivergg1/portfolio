@@ -1,10 +1,13 @@
 .std-button {
+  display: flex;
   padding: 0.6rem 1rem;
 
   background-color: var(--secondary-color);
   border: 1px solid var(--accent-color);
   border-radius: 0.2rem;
   color: var(--text-color);
+
+  gap: 0.5rem;
 }
 
 .std-button:is(.href) {
